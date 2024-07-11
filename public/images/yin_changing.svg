@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="800" height="200" viewBox="0, 0, 800, 200">
+  <g id="Old_Yin">
+    <g id="Old_Yin">
+      <g id="Changing_Yin">
+        <g id="Line">
+          <path d="M0,50 L300,50 L300,150 L0,150 L0,50 z" fill="#1A1110" id="Line"/>
+          <path d="M500,50 L800,50 L800,150 L500,150 L500,50 z" fill="#1A1110" id="Line"/>
+        </g>
+        <g id="Cross">
+          <path d="M346.967,11.612 L488.388,153.033 L453.033,188.388 L311.612,46.967 L346.967,11.612 z" fill="#ED2939" id="Downward_Sloping_Line"/>
+          <path d="M488.388,46.967 L346.967,188.388 L311.612,153.033 L453.033,11.612 L488.388,46.967 z" fill="#ED2939" id="Upward_Sloping_Line"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

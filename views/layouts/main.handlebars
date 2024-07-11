@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+		<title>Oracle of Changes</title>
+
+		<!-- Font Awesome Icons from CDN -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- Bulma Minified CSS from CDN -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css"> -->
+
+		<!-- Customizations to Bulma CSS -->
+		<link rel="stylesheet" type="text/css" href="/stylesheets/bulma-customized.css">
+
+		<!-- noUiSlider 11.0.3 from local folder-->
+		<link rel="stylesheet" type="text/css" href="/nouislider-11.0.3/nouislider.min.css">
+
+		<!-- Yarrow Stalk Oracle CSS -->
+		<link rel="stylesheet" type="text/css" href="/stylesheets/oracle.css">
+
+		<script type="text/javascript">
+			// REF: https://css-tricks.com/snippets/css/remove-gray-highlight-when-tapping-links-in-mobile-safari/
+			document.addEventListener("touchstart", function(){}, true);
+		</script>
+	</head>
+	<body ontouchstart="">
+
+	<!-- START: Navigation Bar & Burger -->
+	<nav id="navbar" class="navbar is-fixed-top is-transparent">
+		<div id="specialShadow" class="special-shadow"></div>
+		<div class="container">
+			<div class="navbar-brand">
+				<a id="brand" class="navbar-item" href="/">
+					<img src="/images/navbar_brand.svg">
+				</a>
+				<div id="navbarBurger" class="navbar-burger" data-target="navMenu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<div class="navbar-menu" id="navMenu">
+				<div class="navbar-start">
+					{{#if currentuser }}
+					<!-- Show "Consult" if signed in -->
+					<a class="navbar-item" href="/consult">Consult</a>
+					<!-- Show "Records" if signed in -->
+					<!-- <a class="navbar-item" href="/records">Records</a> -->
+					{{else}}
+					{{/if}}
+				</div>
+				<div class="navbar-end">
+					<!-- Show "Sign out" button if signed in -->
+					{{#if currentuser}}
+					<a class="navbar-item modal-button" data-target="signout" href="/signout">
+						<span class="icon">
+							<i class="fa fa-sign-out"></i>
+						</span>
+						Sign out
+					</a>
+					<!-- If signed out, show "Sign in" and Sign up" buttons -->
+					{{else}}
+					<a class="navbar-item modal-button" data-target="signin">
+						<span class="icon">
+							<i class="fa fa-sign-in"></i>
+						</span>
+						Sign in
+					</a>
+					<a class="navbar-item modal-button" data-target="signup">
+						<span class="icon">
+							<i class="fa fa-user-plus"></i>
+						</span>
+						Sign up
+					</a>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- END: Navigation Bar & Burger -->
+
+	{{{body}}}
+
+	<!-- START: Sign In Modal -->
+	<div id="signin" class="modal">
+		<div class="modal-background"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Sign in</p>
+				<button class="delete"></button>
+			</header>
+			<form method="post" action="/signin">
+			<section class="modal-card-body">
+				<div class="form">
+					<div class="field">
+						<label class="label">Email</label>
+						<p class="control has-icons-left">
+							<input class="input first-field" type="email" name="email" placeholder="Email">
+							<span class="icon is-small is-left">
+								<i class="fa fa-envelope"></i>
+							</span>
+						</p>
+					</div>
+					<div class="field">
+						<label class="label">Password</label>
+						<p class="control has-icons-left">
+							<input class="input" type="password" name="password" placeholder="Password">
+							<span class="icon is-small is-left">
+								<i class="fa fa-lock"></i>
+							</span>
+						</p>
+					</div>
+					<div class="field">
+						<p class="control">
+							<button class="button is-success is-fullwidth" type="submit">
+								Sign in
+							</button>
+						</p>
+					</div>
+					<div class="field">
+						<a class="button is-info is-fullwidth" href="/twitter">
+							Sign in with Twitter
+						</a>
+					</div>
+				</div>
+			</section>
+			</form>
+			<footer class="modal-card-foot">
+				<div class="content">
+					<p>Or <a class="is-info toggle-other-form" data-target="signup">create an account</a></p>
+				</div>
+			</footer>
+		</div>
+	</div>
+	<!-- END: Sign In Modal -->
+
+	<!-- START: Sign Up Modal -->
+	<div id="signup" class="modal">
+		<div class="modal-background"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Sign up</p>
+				<button class="delete"></button>
+			</header>
+			<form method="post" action="/signup">
+			<section class="modal-card-body">
+				<div class="field">
+					<label class="label">First Name</label>
+					<div class="control">
+						<input class="input first-field" type="text" name="firstname" placeholder="First name">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">Last Name</label>
+					<div class="control">
+						<input class="input" type="text" name="lastname" placeholder="Last name">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">Email</label>
+					<div class="control has-icons-left">
+						<input class="input" type="email" name="email" placeholder="Email">
+						<span class="icon is-small is-left">
+							<i class="fa fa-envelope"></i>
+						</span>
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">Password</label>
+					<p class="control has-icons-left">
+						<input class="input" type="password" name="password" placeholder="Password">
+						<span class="icon is-small is-left">
+							<i class="fa fa-lock"></i>
+						</span>
+					</p>
+				</div>
+				<div class="field">
+					<label class="label">Confirm Password</label>
+					<p class="control has-icons-left">
+						<input class="input" type="password" name="confirm_password" placeholder="Confirm Password">
+						<span class="icon is-small is-left">
+							<i class="fa fa-lock"></i>
+						</span>
+					</p>
+				</div>
+				<div class="field">
+					<p class="control">
+						<button class="button is-success is-fullwidth" type="submit">
+							Sign up
+						</button>
+					</p>
+				</div>
+				<div class="field">
+					<p class="control">
+						<a class="button is-info is-fullwidth" href="/twitter">
+							Sign up with Twitter
+						</a>
+					</p>
+				</div>
+			</section>
+			</form>
+			<footer class="modal-card-foot">
+				<div class="content">
+					<p>Or <a class="is-link toggle-other-form" data-target="signin">sign in to your account</a></p>
+				</div>
+			</footer>
+		</div>
+	</div>
+	<!-- END: Sign In Modal -->
+
+	<!-- START: Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="level">
+				<div class="level-item is-one-third">
+					<div class="content has-text-centered">
+						<p><strong>Oracle of Changes</strong><br>by Lim Jiechao
+					</div>
+				</div>
+				<div class="level-item is-one-third">
+					<div class="columns is-mobile is-centered">
+						<div class="column is-narrow">
+							<a href="https://github.com/limjiechao/project-2">
+								<span class="icon" style="color: #222222;">
+									<i class="fa fa-lg fa-github"></i>
+								</span>
+							</a>
+						</div>
+						<div class="column is-narrow">
+							<a href="https://twitter.com/jiechaolim" target="_blank">
+								<span class="icon" style="color: #55acee;">
+									<i class="fa fa-lg fa-twitter"></i>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="level-item is-one-third has-text-centered">
+					<div class="content">
+						<p class="heading">Made with:</p>
+						<h6>
+							<a href="http://ctext.org/">
+								<img src="/images/ctp_banner.svg" alt="Made with Chinese Text Project" width="160">
+							</a>
+						</h6>
+						<h6>
+							<a href="https://bulma.io">
+								<img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="160">
+							</a>
+						</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- END: Footer -->
+
+	<!-- Load jQuery from CDN -->
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+	<!-- Load noUiSlider 11.0.3 from local folder for slider plugin -->
+	<script type="text/javascript" src="/nouislider-11.0.3/nouislider.min.js"></script>
+
+	<!-- Customizations to Bulma CSS -->
+	<script type="text/javascript" src="/javascripts/bulma-customized.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="800" height="200" viewBox="0, 0, 800, 200">
+  <g id="Old_Yang">
+    <path d="M0,50 L800,50 L800,150 L0,150 L0,50 z" fill="#1A1110" id="Line"/>
+    <path d="M400,0 C455.229,0 500,44.772 500,100 C500,155.228 455.229,200 400,200 C344.772,200 300,155.228 300,100 C300,44.772 344.772,0 400,0 z M400,50 C372.386,50 350,72.386 350,100 C350,127.614 372.386,150 400,150 C427.614,150 450,127.614 450,100 C450,72.386 427.614,50 400,50 z" fill="#ED2939" id="Circle"/>
+  </g>
+</svg>

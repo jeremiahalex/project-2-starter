@@ -1,0 +1,57 @@
+<section class="section">
+    <div class="container">
+        <div class="content">
+
+            <!-- Query and hexagram obtained -->
+            <h1 class="title is-size-1">{{output.query}}</h1>
+
+            <div id="hexagram-diagram"></div>
+
+            <!-- Original Hexagram and Number -->
+            <h3 class="title is-size-3 has-text-grey-light has-text-weight-light">Original</h3>
+            <p class="subtitle is-size-6 has-text-weight-light">Hexagram {{output.json.hexagram.original.number}}</p>
+            <p></p>
+            <h1 class="title is-size-1">{{output.json.hexagram.original.name.chinese}}</h1>
+            <h4 class="subtitle">{{output.json.hexagram.original.name.pinyin}}</h4>
+            <h3>{{output.json.hexagram.original.name.english}}</h3>
+
+            <!-- Resultant Hexagram -->
+            {{#if output.json.hexagram.resultant}}
+            <h3 class="title is-size-3 has-text-grey-light has-text-weight-light">Resultant</h3>
+            {{/if}}
+            <p class="subtitle is-size-6 has-text-weight-light"> Hexagram {{output.json.hexagram.resultant.number}}</p>
+            <p></p>
+
+            <h1 class="title is-size-1">{{output.json.hexagram.resultant.name.chinese}}</h1>
+            <h4 class="subtitle">{{output.json.hexagram.resultant.name.pinyin}}</h4>
+            <h3>{{output.json.hexagram.resultant.name.english}}</h3>
+
+        </div>
+        <div id="retrieved-text" class="content">
+            <h3 class="title is-size-3 has-text-grey-light has-text-weight-light">What it says</h3>
+        </div>
+        <div id="reference" class="content">
+            <h1 class="title is-size-5 has-text-weight-bold">Reference for Hexagram <span id="hexagram-string">{{output.string}}<span></h1>
+            <ul>
+                {{#each output.json.text.yijing.entry}}
+                <li><a id="yijing-{{@key}}-{{@root.output.json.text.yijing.index}}" class="api" href="{{@root.output.json.text.yijing.url}}{{@root.output.json.text.yijing.urn}}/{{this}}">The Book of Changes</a></li>
+                {{/each}}
+
+                {{#each output.json.text.yilin.entry}}
+                <li><a id="yilin-{{@root.output.json.text.yilin.index}}" class="api" href="{{@root.output.json.text.yilin.url}}{{@root.output.json.text.yilin.urn}}/{{this}}">The Forest of Changes</a></li>
+                {{/each}}
+
+                {{#each output.json.parallel.entry}}
+                <li><a id="{{@key}}-{{@index}}" href="{{@root.output.json.parallel.url}}{{this}}">English</a></li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<!-- Load jQuery from CDN -->
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+<!-- Record Logic Controller -->
+<script type="text/javascript" src="/javascripts/result.js"></script>

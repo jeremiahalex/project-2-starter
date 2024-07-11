@@ -1,0 +1,168 @@
+<section class="hero is-danger">
+	<div class="hero-body">
+		<div class="container has-text-centered">
+			<div class="content">
+				<p id="step-one" class="title is-size-5 has-text-centered">1. Type in Your Query</p>
+			</div>
+			<!-- Query Form Modal Here -->
+			<div id="insert-query-here" class="container">
+				<form method="post" action="/result">
+				<div class="tile is-ancestor">
+					<div id="contains-query-field" class="tile is-parent is-vertical">
+						<div class="tile is-child">
+							<div class="field centers-query-section">
+								<div class="control has-query-field" rows="3">
+									<textarea id="query-field" class="textarea is-query-field" name="query" placeholder="Should I do this?"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="tile is-child">
+							<div class="field centers-query-section">
+								<div class="control">
+									<a id="start-divination" class="button is-warning" href="#step-two">Start</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section">
+	<div class="container">
+		<div class="tile is-ancestor <!-- is-mobile -->">
+			<div id="left-portion" class="tile is-parent is-6 is-vertical">
+				<h1 id="step-two" class="title is-size-5 has has-text-centered">2. Split the Stalks</h1>
+				<div class="tile is-child is-vertical <!-- is-block -->">
+					<div id="has-stalks-container" class="tile is-child stalk-container-is-centered">
+						<!-- Yarrow stalks go in this container -->
+						<div id="stalks-container"></div>
+					</div>
+					<div id="has-slider-bar" class="tile is-child"></div>
+					<div id="has-split-button" class="tile is-child">
+						<div id="split" class="content has-text-centered">
+							<button id="is-split-button" class="button is-info" disabled>Split Here</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="right-portion" class="tile is-parent is-6 is-vertical">
+				<h1 id="step-three" class="title is-size-5 has has-text-centered">3. Review Your Divination Data</h1>
+				<!-- START: Divination Form Table -->
+				<form method="post" action="/result/">
+					<table class="table is-striped is-hoverable is-fullwidth is-narrow is-size-7">
+						<thead>
+							<tr>
+								<th><p class="has-text-centered"></p></th>
+								<th colspan="2"><p class="has-text-centered has-text-grey has-text-weight-normal">Round 1</p></th>
+								<th colspan="2"><p class="has-text-centered has-text-grey has-text-weight-normal">Round 2</p></th>
+								<th colspan="2"><p class="has-text-centered has-text-grey has-text-weight-normal">Round 3</p></th>
+								<th><p class="has-text-centered"></p></th>
+							</tr>
+							<tr>
+								<th><p class="has-text-centered has-text-grey-dark">Line</p></th>
+								<th><p class="has-text-centered has-text-grey-dark">L</p></th>
+								<th><p class="has-text-centered has-text-grey-dark">R</p></th>
+								<th><p class="has-text-centered has-text-grey-dark">L</p></th>
+								<th><p class="has-text-centered has-text-grey-dark">R</p></th>
+								<th><p class="has-text-centered has-text-grey-dark">L</p></th>
+								<th><p class="has-text-centered has-text-grey-dark">R</p></th>
+								<th><p class="has-text-centered has-text-grey-dark">Result</p></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th><p class="has-text-centered has-text-weight-light">6</p></th>
+								<td><input id="L6-S1-L" class="display-data" name="L6-S1-L" type="text" readonly></td>
+								<td><input id="L6-S1-R" class="display-data" name="L6-S1-R" type="text" readonly></td>
+								<td><input id="L6-S2-L" class="display-data" name="L6-S2-L" type="text" readonly></td>
+								<td><input id="L6-S2-R" class="display-data" name="L6-S2-R" type="text" readonly></td>
+								<td><input id="L6-S3-L" class="display-data" name="L6-S3-L" type="text" readonly></td>
+								<td><input id="L6-S3-R" class="display-data" name="L6-S3-R" type="text" readonly></td>
+								<th><input id="Line-6" class="display-data" name="Line-6" type="text" readonly></th>
+							</tr>
+							<tr>
+								<th><p class="has-text-centered has-text-weight-light">5</p></th>
+								<td><input id="L5-S1-L" class="display-data" name="L5-S1-L" type="text" readonly></td>
+								<td><input id="L5-S1-R" class="display-data" name="L5-S1-R" type="text" readonly></td>
+								<td><input id="L5-S2-L" class="display-data" name="L5-S2-L" type="text" readonly></td>
+								<td><input id="L5-S2-R" class="display-data" name="L5-S2-R" type="text" readonly></td>
+								<td><input id="L5-S3-L" class="display-data" name="L5-S3-L" type="text" readonly></td>
+								<td><input id="L5-S3-R" class="display-data" name="L5-S3-R" type="text" readonly></td>
+								<th><input id="Line-5" class="display-data" name="Line-5" type="text" readonly></th>
+							</tr>
+							<tr>
+								<th><p class="has-text-centered has-text-weight-light">4</p></th>
+								<td><input id="L4-S1-L" class="display-data" name="L4-S1-L" type="text" readonly></td>
+								<td><input id="L4-S1-R" class="display-data" name="L4-S1-R" type="text" readonly></td>
+								<td><input id="L4-S2-L" class="display-data" name="L4-S2-L" type="text" readonly></td>
+								<td><input id="L4-S2-R" class="display-data" name="L4-S2-R" type="text" readonly></td>
+								<td><input id="L4-S3-L" class="display-data" name="L4-S3-L" type="text" readonly></td>
+								<td><input id="L4-S3-R" class="display-data" name="L4-S3-R" type="text" readonly></td>
+								<th><input id="Line-4" class="display-data" name="Line-4" type="text" readonly></th>
+							</tr>
+							<tr>
+								<th><p class="has-text-centered has-text-weight-light">3</p></th>
+								<td><input id="L3-S1-L" class="display-data" name="L3-S1-L" type="text" readonly></td>
+								<td><input id="L3-S1-R" class="display-data" name="L3-S1-R" type="text" readonly></td>
+								<td><input id="L3-S2-L" class="display-data" name="L3-S2-L" type="text" readonly></td>
+								<td><input id="L3-S2-R" class="display-data" name="L3-S2-R" type="text" readonly></td>
+								<td><input id="L3-S3-L" class="display-data" name="L3-S3-L" type="text" readonly></td>
+								<td><input id="L3-S3-R" class="display-data" name="L3-S3-R" type="text" readonly></td>
+								<th><input id="Line-3" class="display-data" name="Line-3" type="text" readonly></th>
+							</tr>
+							<tr>
+								<th><p class="has-text-centered has-text-weight-light">2</p></th>
+								<td><input id="L2-S1-L" class="display-data" name="L2-S1-L" type="text" readonly></td>
+								<td><input id="L2-S1-R" class="display-data" name="L2-S1-R" type="text" readonly></td>
+								<td><input id="L2-S2-L" class="display-data" name="L2-S2-L" type="text" readonly></td>
+								<td><input id="L2-S2-R" class="display-data" name="L2-S2-R" type="text" readonly></td>
+								<td><input id="L2-S3-L" class="display-data" name="L2-S3-L" type="text" readonly></td>
+								<td><input id="L2-S3-R" class="display-data" name="L2-S3-R" type="text" readonly></td>
+								<th><input id="Line-2" class="display-data" name="Line-2" type="text" readonly></th>
+							</tr>
+							<tr>
+								<th><p class="has-text-centered has-text-weight-light">1</p></th>
+								<td><input id="L1-S1-L" class="display-data" name="L1-S1-L" type="text" readonly></td>
+								<td><input id="L1-S1-R" class="display-data" name="L1-S1-R" type="text" readonly></td>
+								<td><input id="L1-S2-L" class="display-data" name="L1-S2-L" type="text" readonly></td>
+								<td><input id="L1-S2-R" class="display-data" name="L1-S2-R" type="text" readonly></td>
+								<td><input id="L1-S3-L" class="display-data" name="L1-S3-L" type="text" readonly></td>
+								<td><input id="L1-S3-R" class="display-data" name="L1-S3-R" type="text" readonly></td>
+								<th><input id="Line-1" class="display-data" name="Line-1" type="text" readonly></th>
+							</tr>
+						</tbody>
+					</table>
+					<div class="content has-text-centered">
+						<p id="is-submit-prompt" class="is-size-6 is-invisible">Press Submit to see your divination result</p>
+					</div>
+					<div class="content has-text-centered">
+						<button type="submit" id="is-submit-button" class="button is-success" disabled>Submit</button>
+					</div>
+				</form>
+				<!-- END: Divination Form Table -->
+			</div>
+		</div>
+	</div>
+	<!-- Template from which to clone yarrow stalk SVG at the beginning of each round -->
+	<template id="stalk">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="20" height="600" viewBox="0, 0, 20, 600">
+			<g id="Yarrow_Stalk">
+				<g id="Stem">
+					<path d="M20,5 L20,596.305 L20,596.305 C19.173,599.467 13.526,599.869 10,600 C4.477,600 0,598.346 0,596.305 L0,5 L20,5 z" fill="#ffb168"/>
+					<path d="M20,5 L20,596.305 L20,596.305 C19.173,599.467 13.526,599.869 10,600 C4.477,600 0,598.346 0,596.305 L0,5 L20,5 z M18.5,6.5 L1.5,6.5 L1.5,596.305 C1.5,597.11 5.261,598.5 9.944,598.501 C12.302,598.251 17.24,598.555 18.5,596.023 L18.5,6.5 z" fill="#686868"/>
+				</g>
+				<g id="Top">
+					<path d="M10,10 C4.477,10 0,7.761 0,5 C0,2.239 4.477,0 10,0 C15.523,0 20,2.239 20,5 C20,7.761 15.523,10 10,10 z" fill="#FFB168"/>
+					<path d="M10,0 C15.523,0 20,2.239 20,5 C20,7.761 15.523,10 10,10 C4.477,10 0,7.761 0,5 C0,2.239 4.477,0 10,0 z M10,1.5 C5.199,1.5 1.5,3.35 1.5,5 C1.5,6.65 5.199,8.5 10,8.5 C14.801,8.5 18.5,6.65 18.5,5 C18.5,3.35 14.801,1.5 10,1.5 z" fill="#686868"/>
+				</g>
+			</g>
+		</svg>
+	</template>
+</section>
+<!-- Load jQuery from CDN -->
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+<!-- Yarrow Stalk Oracle Logic Controller -->
+<script type="text/javascript" src="/javascripts/oracle.js"></script>

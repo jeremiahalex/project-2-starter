@@ -1,0 +1,269 @@
+body {
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+#left-portion, #right-portion, #text-1, #text-2, #text-3, .navbar-brand,  {
+	padding-left: env(safe-area-inset-left);
+	padding-right: env(safe-area-inset-right);
+}
+
+.stalk-position svg {
+	max-width: 10px;
+	height: auto;
+	margin: -0.5px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#stalks-container {
+	display: flex;
+	padding: 1rem;
+}
+
+.gap {
+	width: 28px;
+	cursor: pointer;
+}
+
+.stalk-container-is-centered {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-shrink: 0;
+	flex-grow: 0;
+}
+
+#slider-bar {
+	margin: auto;
+	max-width: 75%;
+	animation-duration: 150ms;
+}
+
+.display-data {
+	width: 100%;
+	text-align: center;
+	border: none;
+	background: none;
+	padding: 0;
+	margin: 0;
+}
+
+.table-is-centered {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.has-query-field {
+	min-width: 500px;
+}
+
+.centers-query-section {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.is-query-field {
+	text-align: center;
+}
+
+#Line-1, #Line-2, #Line-3, #Line-4, #Line-5, #Line-6 {
+	font-weight: bolder;
+}
+
+#hexagram-diagram {
+	margin: auto;
+	display: grid;
+	grid-template-areas:
+		"value-6 image-6"
+		"value-5 image-5"
+		"value-4 image-4"
+		"value-3 image-3"
+		"value-2 image-2"
+		"value-1 image-1";
+	grid-template-columns: 2rem 15rem;
+	grid-template-rows: repeat(6, 3.6rem);
+	max-width: 18rem;
+	grid-gap: 0.1rem;
+}
+
+.value-1 { grid-area: value-1; }
+.value-2 { grid-area: value-2; }
+.value-3 { grid-area: value-3; }
+.value-4 { grid-area: value-4; }
+.value-5 { grid-area: value-5; }
+.value-6 { grid-area: value-6; }
+
+.image-1 { grid-area: image-1; }
+.image-2 { grid-area: image-2; }
+.image-3 { grid-area: image-3; }
+.image-4 { grid-area: image-4; }
+.image-5 { grid-area: image-5; }
+.image-6 { grid-area: image-6; }
+
+.line-label {
+	font-size: 2.2rem;
+	align-self: center;
+	line-height: 1.8;
+	font-weight: lighter;
+	text-align: center;
+}
+.line-image {
+	height: 100%;
+	width: 100%;
+	object-fit: scale-down;
+	object-position: 50% 50%;
+}
+
+.yao-6::after { content: "6"; }
+.yao-7::after { content: "7"; }
+.yao-8::after { content: "8"; }
+.yao-9::after { content: "9"; }
+
+@media only screen and (min-width: 1024px) and (max-width: 1215px) {
+	.stalk-position svg {
+		max-width: 8px;
+	}
+	#slider-bar {
+		margin: auto;
+		max-width: 85%;
+	}
+
+	#stalks-container {
+		height: 300px;
+	}
+}
+
+@media only screen and (min-width: 870px) and (max-width: 1023px) {
+	.stalk-position svg {
+		max-width: 7px;
+	}
+	#stalks-container {
+		height: 260px;
+		padding: 1rem;
+	}
+	#slider-bar {
+		margin: auto;
+		max-width: 85%;
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 869px) {
+	.stalk-position svg {
+		max-width: 6px;
+	}
+	#stalks-container {
+		height: 235px;
+		padding: 1rem;
+	}
+	#slider-bar {
+		margin: auto;
+		max-width: 85%;
+	}
+}
+
+@media only screen and (min-width: 478px) and (max-width: 600px) {
+	.stalk-position svg {
+		max-width: 8px;
+	}
+	#stalks-container {
+		height: 290px;
+		padding: 0;
+	}
+	.gap {
+		width: 24px;
+	}
+	#slider-bar {
+		margin: auto;
+		max-width: 85%;
+	}
+	.has-query-field {
+		min-width: 100%;
+	}
+}
+
+@media only screen and (min-width: 415px) and (max-width: 477px) {
+	.stalk-position svg {
+		max-width: 7px;
+	}
+	#stalks-container {
+		height: 260px;
+		padding: 0;
+	}
+	.gap {
+		width: 22px;
+	}
+	#slider-bar {
+		margin: auto;
+		max-width: 85%;
+	}
+	.has-query-field {
+		min-width: 100%;
+	}
+}
+
+@media only screen and (min-width: 376px) and (max-width: 414px) {
+	.stalk-position svg {
+		max-width: 7px;
+	}
+	#stalks-container {
+		height: 260px;
+		padding: 0;
+	}
+	.gap {
+		width: 20px;
+	}
+	#slider-bar {
+		margin: auto;
+		max-width: 85%;
+	}
+	.has-query-field {
+		min-width: 100%;
+	}
+}
+
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+	.stalk-position svg {
+		max-width: 6px;
+	}
+	#stalks-container {
+		height: 225px;
+		padding: 0;
+	}
+	.gap {
+		width: 18px;
+	}
+	#slider-bar {
+		margin: auto;
+		max-width: 85%;
+	}
+	.has-query-field {
+		min-width: 100%;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	#brand {
+		max-width: 80%;
+	}
+	.stalk-position svg {
+		max-width: 5px;
+	}
+	#stalks-container {
+		height: 195px;
+		padding: 0;
+	}
+	.gap {
+		width: 16px;
+	}
+	#slider-bar {
+		margin: auto;
+		max-width: 85%;
+	}
+	.has-query-field {
+		min-width: 100%;
+	}
+}
