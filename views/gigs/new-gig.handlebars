@@ -1,0 +1,35 @@
+<div class="row align-items-center justify-content-center" style="margin-top: 30px">
+  <div class="col-6">
+  <h3>New Gig</h3>
+
+<form action="/gigs/new-gig" method="post">
+
+  <label for="gigName">Name</label>
+  <input type="text" name="name" placeholder="Prototype a Thingy">
+
+  <label for="date">Date/Deadline</label>
+  <input type="text" name="deadline" placeholder="date">
+</br>
+  <label for="specs">Specs</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="specs" placeholder="gig specs in just 2 lines"></textarea>
+</br>
+  <label for="wage">Wage</label>
+  <input type="text" name="wage" placeholder="$10 per hour">
+</br></br>
+  <label for="description">Description</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" placeholder="do share with us more details of the work!"></textarea>
+
+  {{!-- <label for="wage">Wage</label>
+  <input type="text" name="wage" placeholder="$10 per hour"> --}}
+</br>
+  <label for="skills">Skills</label>
+  <input type="text" name="skills" placeholder="C++, woodworking">
+
+
+  <input type="hidden" name="userID" value="{{user._id}}">
+</br></br>
+  <button type="submit" name="button">Submit</button>
+</form>
+
+</div>
+</div>

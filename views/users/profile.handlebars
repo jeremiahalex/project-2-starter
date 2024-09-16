@@ -1,0 +1,42 @@
+<h3>My Profile</h3></h3>
+
+<h1>Hi my name is {{user.name}}</h1>
+
+<form action="/profile/{{user.slug}}/settings?_method=PUT" method="post">
+
+  <label for="nickname">Nickname</label>
+  <input type="text" name="nickname"
+          placeholder="Can be your well-known username or just smth that your friends call you~"
+          value="{{user.profile.0.nickname}}">
+
+  <label for="about">About Me</label>
+  <input type="text" name="about" placeholder="Tell us a little bit about yourself!"
+  value="{{user.profile.0.about}}">
+
+  <label for="skills">Skills</label>
+  <input type="text" name="skills" id="skills" placeholder="C++, woodworking"
+  value="{{user.profile.0.skills}}">
+
+
+  <select id="selectSkills" name="test">
+    <option selected disabled hidden style='display: none' value=''></option>
+    {{#each skills}}
+    <option value="{{this.name}}">{{this.name}}</option>
+    {{/each}}
+  </select>
+
+  <label for="projs">Past Projects and Gigs</label>
+  <input type="text" name="projs" placeholder="anythings that you feel worth mentioning?"
+  value="{{user.profile.0.projs}}">
+
+  <label for="contact">Contact Me!</label>
+  <input type="text" name="contact" placeholder="do share with us more details of the work!"
+  value="{{user.profile.0.contact}}">
+
+  <button type="submit" name="button">Submit</button>
+</form>
+
+<form class="form-inline deleteForm" action="/profile/{{user.slug}}/settings?_method=DELETE" method="post">
+  &nbsp;
+  <button class="btn btn-danger" type="submit" name="button">Delete User</button><br>
+<input type="hidden" name="profileId" value="{{user._id}}">

@@ -1,0 +1,32 @@
+ROUTES for the entire website
+
+* ===== Main Pages ===== *
+GET '/' - redirect to main search page
+GET '/about' - to abt page
+
+* ===== Search Pages (available to non-registered users also)===== *
+GET '/peeps' - search-peeps.handlebars
+GET '/gigs' - search-gigs.handlebars
+
+* ===== User Sign up, Login, Profile and Settings ===== *
+GET '/signup'
+POST '/signup'
+
+GET '/login'
+POST '/login' - redirect to [ /gigs : /login ]
+
+GET '/profile/settings'
+POST '/profile/settings' - update user
+
+GET '/:slug' - user profile name
+POST '/:slug' - add to user profile page (only for that user)
+
+* ===== User Features: CRUD Gigs ===== *
+GET '/gigs/new-gig' - only registered users can post new gig, non-users go to '/sorrysignupla'
+POST '/gigs/new-gig' - only registered users can post new gig
+
+GET '/gigs/:id' - each gig card, viewable by non-registered users also.
+POST '/gigs/:id' - :raisehand: :heart: or comment? , non-users go to '/sorrysignupla'
+
+GET '/gigs/:id/setup' - only author of gig can access this , non-authors go to '/eppnocannot'
+POST '/gigs/:id/setup' - only author of gig can edit and delete this

@@ -1,0 +1,44 @@
+
+<form action="/gigs/{{gig.slug}}/edit?_method=PUT" method="post">
+
+  {{!-- Need to print out the person's name using {{user.name}} or {{this.name}}?--}}
+  <label for="name">name</label>
+  <input type="text" name="name"
+          placeholder="name of your gig"
+          value="{{gig.name}}">
+
+  <label for="dates">Date</label>
+  <input type="text" name="dates" placeholder="when do you need it by?"
+  value="{{gig.dates}}">
+
+  <label for="specs">Specs of the Gig:</label>
+  <input type="text" name="specs" placeholder="More details please"
+  value="{{gig.specs}}">
+
+  <label for="skills">Skills</label>
+  <input type="text" name="skills" id="gigSkills" placeholder="Skills needed for this gig"
+  value="{{gig.skills}}">
+
+  <select id="selectGigSkills" name="test">
+    <option selected disabled hidden style='display: none' value=''></option>
+    {{#each skills}}
+    <option value="{{this.name}}">{{this.name}}</option>
+    {{/each}}
+  </select>
+
+  <label for="description">description</label>
+  <input type="text" name="description" placeholder="Description of work"
+  value="{{gig.description}}">
+
+  <label for="contact">Contact Me!</label>
+  <input type="text" name="contact" placeholder="Gig-er"
+  value="{{gig.author.name}}">
+
+  <button type="submit" name="button">Submit</button>
+</form>
+
+<form class="form-inline deleteGigForm" action="/gigs/{{gig.slug}}/edit?_method=DELETE" method="post">
+  &nbsp;
+  <button class="btn btn-danger" type="submit" name="button">Delete Gig</button><br>
+<input type="hidden" name="gigID" value="{{gig._id}}">
+</form>

@@ -1,0 +1,13 @@
+
+<h1>Name: {{gig.name}}</h1>
+<h1>Need it by: {{gig.dates}}</h1>
+<h1>Specs of the Gig: {{gig.specs}}</h1>
+<h1>More details: {{gig.description}}</h1>
+<h1>Here are the skills I'll need from you: {{gig.skills}}</h1>
+<h1>Contact Me! {{gig.author.name}}</h1>
+
+{{#equal user.name gig.author.name}}
+<form action="/gigs/{{gig.slug}}" method="Post">
+    <input type="submit" value="Edit this Gig!" />
+</form>
+{{/equal}}
